@@ -23,7 +23,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bson_ext
-  mongo
+  bson_ext (~> 1.9.2)
+  mongo (~> 1.9.2)
   sinatra (~> 1.4.3)
   slim (~> 2.0.1)
