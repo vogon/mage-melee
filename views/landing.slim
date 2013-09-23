@@ -1,8 +1,17 @@
+doctype html
 html
 	head
 		title Mage Melee
 
 	body
 		| hello world!
+		br
+		| games that exist:
+		ul
+			- games.each do |g|
+				li = g.name
+			li
+				a href="#" id="creategame" create a new game
 
-		script type="text/javascript" href="//code.jquery.com/jquery-2.0.3.min.js"
+		script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"
+		script type="text/javascript" src="/magemelee.js"
