@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-apt-get update
-apt-get install ruby-bundler
-apt-get install ruby-dev
-apt-get install mongodb-server
+apt-get -y update
+apt-get -y install ruby-bundler
+apt-get -y install ruby-dev
+apt-get -y install mongodb-server
