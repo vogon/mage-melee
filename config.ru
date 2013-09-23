@@ -1,0 +1,3 @@
+require './magemelee'
+
+run MageMeleeApp
