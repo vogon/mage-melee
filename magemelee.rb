@@ -1,10 +1,11 @@
 require 'sinatra'
+require 'slim'
 
 class MageMeleeApp < Sinatra::Base
 	enable :sessions
 
 	get '/' do
-		"hello world!"
+		slim :landing
 	end
 
 	get '/login' do
