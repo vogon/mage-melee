@@ -1,3 +1,5 @@
+require 'json'
+
 require 'mongo'
 include Mongo
 
@@ -11,30 +13,34 @@ class MageMeleeApp < Sinatra::Base
 
 	db = MongoClient.new.db('magemelee', :strict => true)
 	
-	if db['games'] then
+	if db.collection_names.index('games') then
 		games = db['games']
 	else
 		games = db.create_collection('games')
 	end
 
 	get '/' do
+		slim :landing
+	end
+
+	get '/ajax/games' do
 		all_games = games.find().map do |doc|
 			Game.deserialize(doc)
 		end
 
-		slim :landing, locals: { :games => all_games }
+		{ games: all_games }.to_json
 	end
 
-	get '/login' do
+	get '/ajax/login' do
 		session[:logged_in] = "yup"
 		"done"
 	end
 
-	get '/is_logged_in' do
+	get '/ajax/is_logged_in' do
 		"logged_in: #{session[:logged_in]}"
 	end
 
-	post '/new_game' do
+	post '/ajax/new_game' do
 		game = Game.new do
 			self.name = "butts #{rand(1000)}"
 		end

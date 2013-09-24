@@ -13,5 +13,9 @@ class Game
 		{ "name" => self.name }
 	end
 
+	def to_json(options)
+		self.serialize.to_json(options)
+	end
+
 	attr_accessor :name
 end

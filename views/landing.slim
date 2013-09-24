@@ -7,11 +7,8 @@ html
 		| hello world!
 		br
 		| games that exist:
-		ul
-			- games.each do |g|
-				li = g.name
-			li
-				a href="#" id="creategame" create a new game
+		ul class="game-list-container"
 
 		script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"
+		script type="text/javascript" src="/lib/mustache.js"
 		script type="text/javascript" src="/magemelee.js"
