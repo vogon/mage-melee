@@ -12,12 +12,7 @@ class MageMeleeApp < Sinatra::Base
 	enable :sessions
 
 	db = MongoClient.new.db('magemelee', :strict => true)
-	
-	if db.collection_names.index('games') then
-		games = db['games']
-	else
-		games = db.create_collection('games')
-	end
+	games = db['games']
 
 	get '/' do
 		slim :landing
