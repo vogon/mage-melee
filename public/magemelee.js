@@ -7,21 +7,19 @@ var gameListTemplate = '\
 
 var makeGameList = Mustache.compile(gameListTemplate);
 
-function new_game() {
-	$.post("/ajax/new_game");
-	update_game_list();
+function newGame() {
+	$.post("/ajax/new_game").done(updateGameList);
 }
 
-function update_game_list() {
-	$.get("/ajax/games", 
-		function(games) {
-			var renderedTemplate = makeGameList(JSON.parse(games));
+function updateGameList() {
+	$.getJSON("/ajax/games")
+		.done(function(games) {
+			var renderedTemplate = makeGameList(games);
 			$(".game-list-container").html(renderedTemplate);
-			$("#create-game").click(new_game);
+			$("#create-game").click(newGame);
 		});
 }
 
 $(function () {
-	update_game_list();
-	// $('#creategame').click(new_game);
+	updateGameList();
 })

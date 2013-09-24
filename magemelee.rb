@@ -24,6 +24,8 @@ class MageMeleeApp < Sinatra::Base
 	end
 
 	get '/ajax/games' do
+		cache_control :no_cache
+
 		all_games = games.find().map do |doc|
 			Game.deserialize(doc)
 		end
