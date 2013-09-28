@@ -12,6 +12,8 @@ test/tmp
 test/version_tmp
 tmp
 
+*.sublime-project
+*.sublime-workspace
 
 # YARD artifacts
 .yardoc
