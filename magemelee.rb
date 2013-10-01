@@ -29,7 +29,7 @@ class MageMeleeApp < Sinatra::Base
 		{ games: Game.all }.to_json
 	end
 
-	get '/ajax/login' do
+	post '/ajax/login' do
 		session[:logged_in] = "yup"
 		"done"
 	end
