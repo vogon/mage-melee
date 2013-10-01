@@ -4,7 +4,7 @@ include Mongo
 client = MongoClient.new
 
 task :default do
-	rackup
+	sh 'rackup'
 end
 
 task :initdb do
