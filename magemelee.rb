@@ -39,6 +39,11 @@ class MageMeleeApp < Sinatra::Base
 	end
 
 	post '/ajax/new_game' do
-		GameSession.new_game("butts #{rand(1000)}")
+		query = Rack::Utils.parse_query(request.query_string)
+		400 if !query["name"]
+
+		GameSession.new_game(
+			name: query["name"]
+		)
 	end
 end

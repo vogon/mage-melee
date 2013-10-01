@@ -2,13 +2,19 @@ var gameListTemplate = '\
 	{{#games}}\
 	<li>{{name}}</li>\
 	{{/games}}\
-	<li><a href="#" id="create-game">create a new game</a></li>\
+	<li>\
+		<input id="new-game-name">\
+		<button id="create-game">create a new game</button>\
+	</li>\
 ';
 
 var makeGameList = Mustache.compile(gameListTemplate);
 
 function newGame() {
-	$.post("/ajax/new_game").done(updateGameList);
+	var escapedName = encodeURI($("#new-game-name").val());
+	var ajaxURI = "/ajax/new_game?name=" + escapedName;
+
+	$.post(ajaxURI).done(updateGameList);
 }
 
 function updateGameList() {

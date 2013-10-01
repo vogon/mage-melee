@@ -3,9 +3,9 @@ require 'models/mage'
 
 module GameSession
 	class << self 
-		def new_game(name)
+		def new_game(props)
 			Game.create(
-				name: name
+				name: props[:name]
 			)
 		end
 	end
