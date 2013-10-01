@@ -3,6 +3,10 @@ include Mongo
 
 client = MongoClient.new
 
+task :default do
+	rackup
+end
+
 task :initdb do
 	client.drop_database('magemelee')
 
