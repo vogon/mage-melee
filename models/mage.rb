@@ -1,3 +1,5 @@
+require 'mongo_mapper'
+
 class Mage
 	include MongoMapper::Document
 

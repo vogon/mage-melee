@@ -1,3 +1,5 @@
+require 'mongo_mapper'
+
 class Game
 	include MongoMapper::Document
 

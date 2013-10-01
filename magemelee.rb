@@ -10,6 +10,8 @@ include Mongo
 require 'sinatra'
 require 'slim'
 
+require 'controller/gamesession'
+
 require 'models/game'
 
 class MageMeleeApp < Sinatra::Base
@@ -37,6 +39,6 @@ class MageMeleeApp < Sinatra::Base
 	end
 
 	post '/ajax/new_game' do
-		Game.create(:name => "butts #{rand(1000)}")
+		GameSession.new_game("butts #{rand(1000)}")
 	end
 end
