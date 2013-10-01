@@ -1,3 +1,6 @@
+# let us require files inside this tree with relative paths
+$LOAD_PATH << File.expand_path(".")
+
 require 'json'
 
 require 'mongo'
@@ -7,7 +10,7 @@ include Mongo
 require 'sinatra'
 require 'slim'
 
-load 'models/game.rb'
+require 'models/game'
 
 class MageMeleeApp < Sinatra::Base
 	enable :sessions
