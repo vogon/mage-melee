@@ -1,0 +1,9 @@
+.card {
+	width: 20em;
+	height: 28em;
+	
+	border-radius: 1em;
+	border-color: "black";
+	border-width: 0.75em;
+	border-style: solid;
+}
