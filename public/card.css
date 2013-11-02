@@ -3,7 +3,33 @@
 	height: 28em;
 	
 	border-radius: 1em;
-	border-color: "black";
+	border-color: black;
 	border-width: 0.75em;
 	border-style: solid;
+
+	font-family: 'PT Serif Caption', serif;
+
+	position: relative;
+
+	background-image: url("http://3.bp.blogspot.com/-47GNsBe10Ns/T3vHOvKqxpI/AAAAAAAAE-Q/MC-h1TSOhAY/s320/ExtraArms.jpg");
+	background-color: red;
+	background-position: 0em 2em;
+	background-repeat: no-repeat;
+}
+
+.card .body {
+	font-size: 0.8em;
+	
+	position: absolute;
+	bottom: 0px;
+
+	background-color: white;
+	padding: 0.2em;
+}
+
+.card .title {
+	font-family: 'Fondamento', cursive;
+	font-size: 1.5em;
+	background-color: tan;
+	padding: 0.2em;
 }
